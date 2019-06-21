@@ -1,5 +1,7 @@
 # Pytest
 
+The N-output.txt have the command line used to run the tests and the output of those tests. 
+
 Here are a few of the reasons pytest stands out above many other test
 frameworks:
 
@@ -45,4 +47,16 @@ interface, but against an interface just below the surface. Since most of
 the tests in this book test against the API layer—not the CLI—they qualify
 as subcutaneous tests.
 
+## Task project
 
+Another great use of software tests is to test your assumptions about how
+the software under test works, which can include testing your understanding
+of third-party modules and packages, and even builtin Python data structures.
+The **Tasks project** uses a structure called Task, which is based on the _namedtuple_
+factory method, which is part of the standard library. The Task structure
+**is used as a data structure to pass information between the UI and the API**.
+
+Here’s Task:
+
+    from collections import namedtuple
+    Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
