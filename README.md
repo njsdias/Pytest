@@ -6,10 +6,12 @@ The pytest framework makes it easy to write small tests, yet scales to support c
 
 pytest is a software test framework, which means pytest is a command-line tool that automatically finds tests you’ve written, runs the tests, and reports the results. It has a library of goodies that you can use in your tests to help you test more effectively. It can be extended by writing plugins or installing third-party plugins. It can be used to test Python distributions. And it integrates easily with other tools like continuous integration and web automation.
 
-What You Need:
+**What You Need:**
 
 The examples of the book are written using Python 3.6 and pytest 3.0. However, pytest 3.0 supports Python 2.6, 2.7, and Python 3.3-3.6.
 In my case I used the IntelliJ to follow the book.
+
+You should use pip to **install** pytest and pytest plugins
 
 
 ![book](https://user-images.githubusercontent.com/37953610/59893097-a1983480-93d3-11e9-8a72-9ac46708fcc3.JPG)
