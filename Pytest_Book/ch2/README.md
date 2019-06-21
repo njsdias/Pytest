@@ -140,3 +140,46 @@ The expression we pass into skipif() can be any valid Python expression. In this
 case, we’re checking the package version.
 We included reasons in both skip and skipif. It’s not required in skip, but it is
 required in skipif. I like to include a reason for every skip, skipif, or xfail.
+
+The x is for XFAIL, which means “expected to fail.” The capital X is for XPASS or
+“expected to fail but passed.”
+
+    pytest -v test_unique_id_4.py
+    
+You can configure pytest to report the tests that pass but were marked with
+xfail to be reported as FAIL. This is done in a **pytest.ini** file: 
+
+    [pytest]
+    xfail_strict=true
+    
+## Running a subset of tests
+
+- All inside of a folder
+
+      pytest -v tests/func --tb=no
+    
+- All inside a file.py
+
+      pytest tests/func/test_add.py
+    
+- A specific test inside a file
+
+      pytest -v tests/func/test_add.py::test_add_returns_valid_id
+
+- A single test class. In this case we defined a class named TestUpdate
+
+      pytest -v tests/func/test_api_exceptions.py::TestUpdate
+
+- A Single Test Method of a Test Class. In this case we are running the test test_bad_id that is inside of TestUpdate class
+
+      pytest -v tests/func/test_api_exceptions.py::TestUpdate::test_bad_id
+    
+- A Set of Tests Based on Test Name: using the option -k enables you to pass in an expression to run tests that have
+certain names specified by the expression as a substring of the test name.
+You can use and, or, and not in your expression to create complex expressions. For example, we can run all of the functions that have _raises in their name:
+
+    pytest -v -k _raises
+    
+  - We can use and and not to get rid of the test_delete_raises() from the session:
+    
+        pytest -v -k "_raises and not delete"    
