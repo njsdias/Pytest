@@ -1,0 +1,273 @@
+Microsoft Windows [Version 10.0.17134.407]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code>pytest -v -m "smoke"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code, inifile:
+collected 0 items / 1 errors                                                                                                                                                                                                           
+
+=============================================================================================================== ERRORS ================================================================================================================
+__________________________________________________________________________________________________________ ERROR collecting  __________________________________________________________________________________________________________
+Defining 'pytest_plugins' in a non-top-level conftest is no longer supported because it affects the entire directory tree in a non-explicit way.
+  C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch5\pytest-nice\tests\conftest.py
+Please move it to a top level conftest file at the rootdir:
+  None
+For more information, visit:
+  https://docs.pytest.org/en/latest/deprecations.html#pytest-plugins-in-non-top-level-conftest-files
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================================================================================================= 1 error in 0.42 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code>cd ch2
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2>cd tasks_proj
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj>pytest -v -m "smoke"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj, inifile:
+collected 56 items / 53 deselected / 3 selected                                                                                                                                                                                        
+
+tests/func/test_add.py::test_added_task_has_id_set PASSED                                                                                                                                                                        [ 33%]
+tests/func/test_api_exceptions.py::test_list_raises PASSED                                                                                                                                                                       [ 66%]
+tests/func/test_api_exceptions.py::test_get_raises PASSED                                                                                                                                                                        [100%]
+
+=============================================================================================== 3 passed, 53 deselected in 0.23 seconds ===============================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj>cd tests\func
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest test_unique_id_1.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 1 item                                                                                                                                                                                                                       
+
+test_unique_id_1.py F                                                                                                                                                                                                            [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+___________________________________________________________________________________________________________ test_unique_id ____________________________________________________________________________________________________________
+
+    def test_unique_id():
+        """Calling unique_id() twice should return different numbers."""
+        id_1 = tasks.unique_id()
+        id_2 = tasks.unique_id()
+>       assert id_1 != id_2
+E       assert 1 != 1
+
+test_unique_id_1.py:11: AssertionError
+====================================================================================================== 1 failed in 0.10 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest test_unique_id_2.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 2 items                                                                                                                                                                                                                      
+
+test_unique_id_2.py s.                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 passed, 1 skipped in 0.06 seconds =================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_unique_id_2.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 2 items                                                                                                                                                                                                                      
+
+test_unique_id_2.py::test_unique_id_1 SKIPPED                                                                                                                                                                                    [ 50%]
+test_unique_id_2.py::test_unique_id_2 PASSED                                                                                                                                                                                     [100%]
+
+================================================================================================= 1 passed, 1 skipped in 0.07 seconds =================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest test_unique_id_3.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 2 items                                                                                                                                                                                                                      
+
+test_unique_id_3.py s.                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 passed, 1 skipped in 0.06 seconds =================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -rs test_unique_id_3.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 2 items                                                                                                                                                                                                                      
+
+test_unique_id_3.py s.                                                                                                                                                                                                           [100%]
+======================================================================================================= short test summary info =======================================================================================================
+SKIPPED [1] func\test_unique_id_3.py:8: not supported until version 0.2.0
+
+================================================================================================= 1 passed, 1 skipped in 0.07 seconds =================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -rs test_unique_id_4.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 4 items                                                                                                                                                                                                                      
+
+test_unique_id_4.py xxF.                                                                                                                                                                                                         [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+______________________________________________________________________________________________________ test_unique_id_not_a_duck ______________________________________________________________________________________________________
+[XPASS(strict)]
+============================================================================================ 1 failed, 1 passed, 2 xfailed in 0.13 seconds ============================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest test_unique_id_4.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 4 items                                                                                                                                                                                                                      
+
+test_unique_id_4.py xxF.                                                                                                                                                                                                         [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+______________________________________________________________________________________________________ test_unique_id_not_a_duck ______________________________________________________________________________________________________
+[XPASS(strict)]
+============================================================================================ 1 failed, 1 passed, 2 xfailed in 0.12 seconds ============================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_unique_id_4.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 4 items                                                                                                                                                                                                                      
+
+test_unique_id_4.py::test_unique_id_1 XFAIL                                                                                                                                                                                      [ 25%]
+test_unique_id_4.py::test_unique_id_is_a_duck XFAIL                                                                                                                                                                              [ 50%]
+test_unique_id_4.py::test_unique_id_not_a_duck FAILED                                                                                                                                                                            [ 75%]
+test_unique_id_4.py::test_unique_id_2 PASSED                                                                                                                                                                                     [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+______________________________________________________________________________________________________ test_unique_id_not_a_duck ______________________________________________________________________________________________________
+[XPASS(strict)]
+============================================================================================ 1 failed, 1 passed, 2 xfailed in 0.12 seconds ============================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v -k _raises
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 50 items / 45 deselected / 5 selected                                                                                                                                                                                        
+
+test_api_exceptions.py::test_add_raises PASSED                                                                                                                                                                                   [ 20%]
+test_api_exceptions.py::test_list_raises PASSED                                                                                                                                                                                  [ 40%]
+test_api_exceptions.py::test_get_raises PASSED                                                                                                                                                                                   [ 60%]
+test_api_exceptions.py::test_delete_raises PASSED                                                                                                                                                                                [ 80%]
+test_api_exceptions.py::test_start_tasks_db_raises PASSED                                                                                                                                                                        [100%]
+
+=============================================================================================== 5 passed, 45 deselected in 0.08 seconds ===============================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety::test_add_1
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collecting ... 
+==================================================================================================== no tests ran in 0.01 seconds =====================================================================================================
+ERROR: file not found: test_add_variety::test_add_1
+
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_1
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 1 item                                                                                                                                                                                                                       
+
+test_add_variety.py::test_add_1 PASSED                                                                                                                                                                                           [100%]
+
+====================================================================================================== 1 passed in 0.12 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_2
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 4 items                                                                                                                                                                                                                      
+
+test_add_variety.py::test_add_2[task0] PASSED                                                                                                                                                                                    [ 25%]
+test_add_variety.py::test_add_2[task1] PASSED                                                                                                                                                                                    [ 50%]
+test_add_variety.py::test_add_2[task2] PASSED                                                                                                                                                                                    [ 75%]
+test_add_variety.py::test_add_2[task3] PASSED                                                                                                                                                                                    [100%]
+
+====================================================================================================== 4 passed in 0.12 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_3
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 4 items                                                                                                                                                                                                                      
+
+test_add_variety.py::test_add_3[sleep-None-False] PASSED                                                                                                                                                                         [ 25%]
+test_add_variety.py::test_add_3[wake-brian-False] PASSED                                                                                                                                                                         [ 50%]
+test_add_variety.py::test_add_3[breathe-BRIAN-True] PASSED                                                                                                                                                                       [ 75%]
+test_add_variety.py::test_add_3[eat eggs-BrIaN-False] PASSED                                                                                                                                                                     [100%]
+
+====================================================================================================== 4 passed in 0.13 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_3[sleep-None-False]
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 1 item                                                                                                                                                                                                                       
+
+test_add_variety.py::test_add_3[sleep-None-False] PASSED                                                                                                                                                                         [100%]
+
+====================================================================================================== 1 passed in 0.06 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_5
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 5 items                                                                                                                                                                                                                      
+
+test_add_variety.py::test_add_5[Task(sleep,None,True)] PASSED                                                                                                                                                                    [ 20%]
+test_add_variety.py::test_add_5[Task(wake,brian,False)0] PASSED                                                                                                                                                                  [ 40%]
+test_add_variety.py::test_add_5[Task(wake,brian,False)1] PASSED                                                                                                                                                                  [ 60%]
+test_add_variety.py::test_add_5[Task(breathe,BRIAN,True)] PASSED                                                                                                                                                                 [ 80%]
+test_add_variety.py::test_add_5[Task(exercise,BrIaN,False)] PASSED                                                                                                                                                               [100%]
+
+====================================================================================================== 5 passed in 0.15 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::TestAdd
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 10 items                                                                                                                                                                                                                     
+
+test_add_variety.py::TestAdd::test_equivalent[Task(sleep,None,True)] PASSED                                                                                                                                                      [ 10%]
+test_add_variety.py::TestAdd::test_equivalent[Task(wake,brian,False)0] PASSED                                                                                                                                                    [ 20%]
+test_add_variety.py::TestAdd::test_equivalent[Task(wake,brian,False)1] PASSED                                                                                                                                                    [ 30%]
+test_add_variety.py::TestAdd::test_equivalent[Task(breathe,BRIAN,True)] PASSED                                                                                                                                                   [ 40%]
+test_add_variety.py::TestAdd::test_equivalent[Task(exercise,BrIaN,False)] PASSED                                                                                                                                                 [ 50%]
+test_add_variety.py::TestAdd::test_valid_id[Task(sleep,None,True)] PASSED                                                                                                                                                        [ 60%]
+test_add_variety.py::TestAdd::test_valid_id[Task(wake,brian,False)0] PASSED                                                                                                                                                      [ 70%]
+test_add_variety.py::TestAdd::test_valid_id[Task(wake,brian,False)1] PASSED                                                                                                                                                      [ 80%]
+test_add_variety.py::TestAdd::test_valid_id[Task(breathe,BRIAN,True)] PASSED                                                                                                                                                     [ 90%]
+test_add_variety.py::TestAdd::test_valid_id[Task(exercise,BrIaN,False)] PASSED                                                                                                                                                   [100%]
+
+====================================================================================================== 10 passed in 0.22 seconds ======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>pytest -v test_add_variety.py::test_add_6
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests, inifile: pytest.ini
+collected 3 items                                                                                                                                                                                                                      
+
+test_add_variety.py::test_add_6[just summary] PASSED                                                                                                                                                                             [ 33%]
+test_add_variety.py::test_add_6[summary\owner] PASSED                                                                                                                                                                            [ 66%]
+test_add_variety.py::test_add_6[summary\owner\done] PASSED                                                                                                                                                                       [100%]
+
+====================================================================================================== 3 passed in 0.14 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch2\tasks_proj\tests\func>
