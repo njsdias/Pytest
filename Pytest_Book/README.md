@@ -97,3 +97,43 @@ pytest that a test is expected to fail by using the @pytest.mark.xfail() decorat
 • ERROR (E): An exception happened outside of the test function, in either
 a fixture.
 
+## Options of pytest
+
+        pytest --help
+
+-k EXPRESSION only run tests/classes which match the given
+substring expression.
+
+   - Example: -k 'test_method or test_other' matches all test functions and classes whose name contains 'test_method' or 'test_other'.
+   
+-m MARKEXPR only run tests matching given mark expression.
+
+   - Example: -m 'mark1 and not mark2'.
+   
+-x, --exitfirst exit instantly on first error or failed test.
+
+--maxfail=num exit after first num failures or errors.
+
+--capture=method per-test capturing method: one of fd|sys|no.
+
+-s shortcut for --capture=no.
+
+--lf, --last-failed rerun only the tests that failed last time (or all if none failed)
+
+--ff, --failed-first run all tests but run the last failures first.
+
+-v, --verbose increase verbosity.
+
+-q, --quiet decrease verbosity.
+
+-l, --showlocals show locals in tracebacks (disabled by default).
+
+--tb=style traceback print mode (auto/long/short/line/native/no).
+
+--durations=N show N slowest setup/test durations (N=0 for all).
+
+--collect-only only collect tests, don't execute them.
+
+--version display pytest lib version and import information.
+
+-h, --help show help message and configuration info
