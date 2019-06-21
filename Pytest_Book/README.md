@@ -60,3 +60,18 @@ Here’s Task:
 
     from collections import namedtuple
     Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
+
+
+The part of pytest execution where pytest goes off and finds which tests to
+run is called **test discovery**. pytest was able to find all the tests we wanted it
+to run because we named them according to the pytest naming conventions.
+Here’s a brief overview of **the naming conventions** to keep your test code discoverable
+by pytest:
+
+• Test files should be named test_<something>.py or <something>_test.py.
+    
+• Test methods and functions should be named test_<something>.
+• Test classes should be named Test<Something>.
+    
+Since our test files and functions start with test_, we’re good
+
