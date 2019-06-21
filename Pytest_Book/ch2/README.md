@@ -60,12 +60,83 @@ functions, and can be used to represent resources and data used by the
 tests. Hook functions and fixtures that are used by tests in multiple subdirectories should be contained in tests/conftest.py. You
 can have multiple conftest.py files; for example, you can have one at tests and one for each subdirectory under tests.
 
+The _test_task.py_ file has this import statement:
+
+    from tasks import Task
+
+The best way to allow the tests to be able to _import tasks_ or _from tasks import something_
+is to install tasks locally using pip. **This is possible because there’s a setup.py
+file present to direct pip.** Install tasks either by running _pip install_ . or _pip install -e_ . from the tasks_proj directory.
+Or you can run _pip install -e tasks_proj_ from one directory up:
+
+    cd /path/to/code
+    pip install ./tasks_proj/
+    pip install --no-cache-dir ./tasks_proj/
+    Processing ./tasks_proj
+
+## Expecting Exceptions
+
+Exceptions may be raised in a few places in the Tasks API. Let’s take a quick
+peek at the functions found in tasks/api.py:
+
+    def add(task): # type: (Task) -> int
+    def get(task_id): # type: (int) -> Task
+    def list_tasks(owner=None): # type: (str|None) -> list of Task
+    def count(): # type: (None) -> int
+    def update(task_id, task): # type: (int, Task) -> None
+    def delete(task_id): # type: (int) -> None
+    def delete_all(): # type: () -> None
+    def unique_id(): # type: () -> int
+    def start_tasks_db(db_path, db_type): # type: (str, str) -> None
+    def stop_tasks_db(): # type: () -> None
+    
+There’s an agreement between the CLI code in cli.py and the API code in api.py
+as to what types will be sent to the API functions. These API calls are a place
+where I’d expect exceptions to be raised if the type is wrong.
+
+## Marking Test Functions
+
+pytest provides a cool mechanism to let you put markers on test functions.
+A test can have more than one marker, and a marker can be on multiple
+tests.
+
+Markers make sense after you see them in action. Let’s say we want to run
+a subset of our tests as a quick “smoke test” to get a sense for whether or not
+there is some major break in the system. Smoke tests are by convention not
+all-inclusive, thorough test suites, but a select subset that can be run
+quickly and give a developer a decent idea of the health of all parts of the
+system.
+
+To add a smoke test suite to the Tasks project, we can add **@mark.pytest.smoke**
+to some of the tests. 
 
 
+## Skipping Tests
 
+Marking a test to be skipped is as simple as adding **@pytest.mark.skip()** just above
+the test function.
 
+    @pytest.mark.skip(reason='misunderstood the API')
+    def test_unique_id_1():
+        """Calling unique_id() twice should return different numbers."""
+        id_1 = tasks.unique_id()
+        id_2 = tasks.unique_id()
+        assert id_1 != id_2
 
+Now, let’s say that for some reason we decide the first test should be valid
+also, and we intend to make that work in version 0.2.0 of the package. We
+can leave the test in place and use **skipif** instead:
 
+ch2/tasks_proj/tests/func/test_unique_id_3.py
 
-
-
+    @pytest.mark.skipif(tasks.__version__ < '0.2.0', reason='not supported until version 0.2.0')
+    def test_unique_id_1():
+        """Calling unique_id() twice should return different numbers."""
+        id_1 = tasks.unique_id()
+        id_2 = tasks.unique_id()
+        assert id_1 != id_2
+        
+The expression we pass into skipif() can be any valid Python expression. In this
+case, we’re checking the package version.
+We included reasons in both skip and skipif. It’s not required in skip, but it is
+required in skipif. I like to include a reason for every skip, skipif, or xfail.
