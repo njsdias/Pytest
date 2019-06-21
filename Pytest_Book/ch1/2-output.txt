@@ -1,0 +1,417 @@
+Microsoft Windows [Version 10.0.17134.407]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest tasks/test_three.py tasks/test_four.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_three.py ..                                                                                                                                                                                                           [ 50%]
+tasks\test_four.py ..                                                                                                                                                                                                            [100%]
+
+====================================================================================================== 4 passed in 0.02 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -v tasks/test_four.py::test_asdict
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 1 item                                                                                                                                                                                                                       
+
+tasks/test_four.py::test_asdict PASSED                                                                                                                                                                                           [100%]
+
+====================================================================================================== 1 passed in 0.02 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --collect-only
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+<Module test_one.py>
+  <Function test_passing>
+<Module test_two.py>
+  <Function test_failing>
+<Module tasks/test_four.py>
+  <Function test_asdict>
+  <Function test_replace>
+<Module tasks/test_three.py>
+  <Function test_defaults>
+  <Function test_member_access>
+
+==================================================================================================== no tests ran in 0.03 seconds =====================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -k "asdict or defaults" --collect-only
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items / 4 deselected / 2 selected                                                                                                                                                                                          
+<Module tasks/test_four.py>
+  <Function test_asdict>
+<Module tasks/test_three.py>
+  <Function test_defaults>
+
+==================================================================================================== 4 deselected in 0.03 seconds =====================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -k "asdict or defaults"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items / 4 deselected / 2 selected                                                                                                                                                                                          
+
+tasks\test_four.py .                                                                                                                                                                                                             [ 50%]
+tasks\test_three.py .                                                                                                                                                                                                            [100%]
+
+=============================================================================================== 2 passed, 4 deselected in 0.03 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -v -k "asdict or defaults"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items / 4 deselected / 2 selected                                                                                                                                                                                          
+
+tasks/test_four.py::test_asdict PASSED                                                                                                                                                                                           [ 50%]
+tasks/test_three.py::test_defaults PASSED                                                                                                                                                                                        [100%]
+
+=============================================================================================== 2 passed, 4 deselected in 0.03 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>cd tasks
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks>pytest -v -m run_these_please
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks, inifile:
+collected 2 items / 1 errors / 1 deselected                                                                                                                                                                                            
+
+=============================================================================================================== ERRORS ================================================================================================================
+____________________________________________________________________________________________________ ERROR collecting test_four.py ____________________________________________________________________________________________________
+test_four.py:19: in <module>
+    @pytest.mark.run_these_please
+E   NameError: name 'pytest' is not defined
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+================================================================================================ 1 deselected, 1 error in 0.12 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks>pytest -v -m run_these_please
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks, inifile:
+collected 4 items / 2 deselected / 2 selected                                                                                                                                                                                          
+
+test_four.py::test_replace PASSED                                                                                                                                                                                                [ 50%]
+test_three.py::test_member_access PASSED                                                                                                                                                                                         [100%]
+
+=============================================================================================== 2 passed, 2 deselected in 0.04 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks>cd..
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -x
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+
+test_one.py .                                                                                                                                                                                                                    [ 16%]
+test_two.py F
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_failing _____________________________________________________________________________________________________________
+
+    def test_failing():
+>       assert (1, 2, 3) == (3, 2, 1)
+E       assert (1, 2, 3) == (3, 2, 1)
+E         At index 0 diff: 1 != 3
+E         Use -v to get the full diff
+
+test_two.py:2: AssertionError
+================================================================================================= 1 failed, 1 passed in 0.06 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --tb=no
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+
+test_one.py .                                                                                                                                                                                                                    [ 16%]
+test_two.py F                                                                                                                                                                                                                    [ 33%]
+tasks\test_four.py ..                                                                                                                                                                                                            [ 66%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 failed, 5 passed in 0.13 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --maxfail=2 --tb=no
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+
+test_one.py .                                                                                                                                                                                                                    [ 16%]
+test_two.py F                                                                                                                                                                                                                    [ 33%]
+tasks\test_four.py ..                                                                                                                                                                                                            [ 66%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 failed, 5 passed in 0.07 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --maxfail=1 --tb=no
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+
+test_one.py .                                                                                                                                                                                                                    [ 16%]
+test_two.py F
+
+================================================================================================= 1 failed, 1 passed in 0.06 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --lf
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items / 5 deselected / 1 selected                                                                                                                                                                                          
+run-last-failure: rerun previous 1 failure
+
+test_two.py F                                                                                                                                                                                                                    [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_failing _____________________________________________________________________________________________________________
+
+    def test_failing():
+>       assert (1, 2, 3) == (3, 2, 1)
+E       assert (1, 2, 3) == (3, 2, 1)
+E         At index 0 diff: 1 != 3
+E         Use -v to get the full diff
+
+test_two.py:2: AssertionError
+=============================================================================================== 1 failed, 5 deselected in 0.06 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --ff
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+run-last-failure: rerun previous 1 failure first
+
+test_two.py F                                                                                                                                                                                                                    [ 16%]
+test_one.py .                                                                                                                                                                                                                    [ 33%]
+tasks\test_four.py ..                                                                                                                                                                                                            [ 66%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_failing _____________________________________________________________________________________________________________
+
+    def test_failing():
+>       assert (1, 2, 3) == (3, 2, 1)
+E       assert (1, 2, 3) == (3, 2, 1)
+E         At index 0 diff: 1 != 3
+E         Use -v to get the full diff
+
+test_two.py:2: AssertionError
+================================================================================================= 1 failed, 5 passed in 0.07 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --ff --tb=no
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 6 items                                                                                                                                                                                                                      
+run-last-failure: rerun previous 1 failure first
+
+test_two.py F                                                                                                                                                                                                                    [ 16%]
+test_one.py .                                                                                                                                                                                                                    [ 33%]
+tasks\test_four.py ..                                                                                                                                                                                                            [ 66%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 failed, 5 passed in 0.06 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -q
+.F....                                                                                                                                                                                                                           [100%]
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_failing _____________________________________________________________________________________________________________
+
+    def test_failing():
+>       assert (1, 2, 3) == (3, 2, 1)
+E       assert (1, 2, 3) == (3, 2, 1)
+E         At index 0 diff: 1 != 3
+E         Full diff:
+E         - (1, 2, 3)
+E         ?  ^     ^
+E         + (3, 2, 1)
+E         ?  ^     ^
+
+test_two.py:2: AssertionError
+1 failed, 5 passed in 0.06 seconds
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -q --tb=no
+.F....                                                                                                                                                                                                                           [100%]
+1 failed, 5 passed in 0.06 seconds
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -l tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py ..                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+====================================================================================================== 4 passed in 0.04 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest -l tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py .F                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_replace _____________________________________________________________________________________________________________
+
+    @pytest.mark.run_these_please
+    def test_replace():
+        """replace() should change passed in fields."""
+        t_before = Task('finish book', 'brian', False)
+        t_after = t_before._replace(id=10, done=True)
+        t_expected = Task('finish book', 'brian', True, 11)
+>       assert t_after == t_expected
+E       AssertionError: assert Task(summary=...e=True, id=10) == Task(summary='...e=True, id=11)
+E         At index 3 diff: 10 != 11
+E         Use -v to get the full diff
+
+t_after    = Task(summary='finish book', owner='brian', done=True, id=10)
+t_before   = Task(summary='finish book', owner='brian', done=False, id=None)
+t_expected = Task(summary='finish book', owner='brian', done=True, id=11)
+
+tasks\test_four.py:25: AssertionError
+================================================================================================= 1 failed, 3 passed in 0.08 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --tb=no tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py ..                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+====================================================================================================== 4 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --tb=no tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py .F                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+================================================================================================= 1 failed, 3 passed in 0.07 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --tb=line tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py .F                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1\tasks\test_four.py:25: AssertionError: assert Task(summary=...e=True, id=10) == Task(summary='...e=True, id=11)
+================================================================================================= 1 failed, 3 passed in 0.05 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --tb=short tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py .F                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_replace _____________________________________________________________________________________________________________
+tasks\test_four.py:25: in test_replace
+    assert t_after == t_expected
+E   AssertionError: assert Task(summary=...e=True, id=10) == Task(summary='...e=True, id=11)
+E     At index 3 diff: 10 != 11
+E     Use -v to get the full diff
+================================================================================================= 1 failed, 3 passed in 0.05 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --duration=3 tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py ..                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+====================================================================================================== slowest 3 test durations =======================================================================================================
+
+(0.00 durations hidden.  Use -vv to show these durations.)
+====================================================================================================== 4 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --duration=3 tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py .F                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_replace _____________________________________________________________________________________________________________
+
+    @pytest.mark.run_these_please
+    def test_replace():
+        """replace() should change passed in fields."""
+        t_before = Task('finish book', 'brian', False)
+        t_after = t_before._replace(id=10, done=True)
+        t_expected = Task('finish book', 'brian', True, 10)
+>       time.sleep(0.1)
+E       NameError: name 'time' is not defined
+
+tasks\test_four.py:25: NameError
+====================================================================================================== slowest 3 test durations =======================================================================================================
+
+(0.00 durations hidden.  Use -vv to show these durations.)
+================================================================================================= 1 failed, 3 passed in 0.08 seconds ==================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --duration=3 tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py ..                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+====================================================================================================== slowest 3 test durations =======================================================================================================
+
+(0.00 durations hidden.  Use -vv to show these durations.)
+====================================================================================================== 4 passed in 0.04 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --duration=3 tasks
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1, inifile:
+collected 4 items                                                                                                                                                                                                                      
+
+tasks\test_four.py ..                                                                                                                                                                                                            [ 50%]
+tasks\test_three.py ..                                                                                                                                                                                                           [100%]
+
+====================================================================================================== slowest 3 test durations =======================================================================================================
+0.01s call     tasks/test_four.py::test_replace
+
+(0.00 durations hidden.  Use -vv to show these durations.)
+====================================================================================================== 4 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>pytest --version
+This is pytest version 4.2.1, imported from c:\users\ctw00071\appdata\local\programs\python\python37\lib\site-packages\pytest.py
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch1>
