@@ -61,7 +61,7 @@ Here’s Task:
     from collections import namedtuple
     Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
 
-
+## Name Convention for the tests
 The part of pytest execution where pytest goes off and finds which tests to
 run is called **test discovery**. pytest was able to find all the tests we wanted it
 to run because we named them according to the pytest naming conventions.
@@ -73,5 +73,27 @@ by pytest:
 • Test methods and functions should be named test_<something>.
 • Test classes should be named Test<Something>.
     
+## Output of tests
+
 Since our test files and functions start with test_, we’re good
+
+The outcome of a test is the primary way the person running a test or looking
+at the results understands what happened in the test run. In pytest, test
+functions may have several different outcomes, not just pass or fail.
+Here are the possible outcomes of a test function:
+
+• PASSED (.): The test ran successfully.
+
+• FAILED (F): The test did not run successfully (or XPASS + strict).
+
+• SKIPPED (s): The test was skipped. You can tell pytest to skip a test by
+using either the @pytest.mark.skip() or pytest.mark.skipif() decorators.
+
+• xfail (x): The test was not supposed to pass, ran, and failed. You can tell
+pytest that a test is expected to fail by using the @pytest.mark.xfail() decorator
+
+• XPASS (X): The test was not supposed to pass, ran, and passed.
+
+• ERROR (E): An exception happened outside of the test function, in either
+a fixture.
 
