@@ -1,0 +1,50 @@
+
+# This error occurs because we have a extra space in the begining of the word amount in the csv file
+
+C:\Users\ctw00071\Desktop\PytestPortland\test_ML>pytest -v test_datafuncs.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\test_ML, inifile:
+collected 1 item                                                                                                                                                                                                                       
+
+test_datafuncs.py::test_budget_schemas FAILED                                                                                                                                                                                    [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+_________________________________________________________________________________________________________ test_budget_schemas _________________________________________________________________________________________________________
+
+    def test_budget_schemas():
+        with open('data/metadata_budget.yml', 'r+') as f:
+            metadata = yaml.load(f)
+        columns = metadata['columns']
+        df = pd.read_csv('data/boston_budget.csv')
+>       check_schema(df, columns)
+
+test_datafuncs.py:18:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+df =        Fiscal Year        Service (Cabinet)                   Department                    Program #      ...       A...   999100      ...        51000             Permanent Employees  General Fund   $13300000.00
+
+[12356 rows x 10 columns]
+metacolumns = ['Fiscal Year', 'Service (Cabinet)', 'Department', 'Program #', 'Program', 'Expense Type', ...]
+
+    def check_schema(df, metacolumns):
+        for col in df.columns:
+>           assert col in metacolumns, f'"{col} not in metadata column spec"'
+E           AssertionError: " Amount not in metadata column spec"
+E           assert ' Amount' in ['Fiscal Year', 'Service (Cabinet)', 'Department', 'Program #', 'Program', 'Expense Type', ...]
+
+test_datafuncs.py:11: AssertionError
+
+#==============================================================================
+
+# After delte the extra space we have a success test
+
+C:\Users\ctw00071\Desktop\PytestPortland\test_ML>pytest -v test_datafuncs.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\test_ML, inifile:
+collected 1 item                                                                                                                                                                                                                       
+
+test_datafuncs.py::test_budget_schemas PASSED   
