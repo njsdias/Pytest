@@ -22,3 +22,19 @@ def min_max_scaler(x):
         return np.array([0.5] * len(x))
     else:
         return ((x - x.min()) / (x.max() - x.min()))
+
+"""
+Implement a function that clips data to be within a particular range.
+
+- have the function signature clip(data, lower, upper), where:
+    - data is a numpy array-like data structure.
+    - lower is the lower-bound value.
+    - upper is the upper-bound value.
+- set any data points lower than lower to the value of lower
+- set any data points greater than upper to the value of upper
+
+"""
+def clips(data,lower,upper):
+    data[data < lower] = lower
+    data[data > upper] = upper
+    return data
