@@ -17,4 +17,8 @@ def min_max_scaler(x):
     # assert isinstance(x, np.array) , "x should be a numpy array"
     # assert len(set(x)) > 1, "x should have more than 1 unique value"
 
-    return (x - x.min()) / (x.max()-x.min())
+    unique_vals = np.unique(x)  # checks how many unique values
+    if len(unique_vals) == 1 and isinstance(x, list):
+        return np.array([0.5] * len(x))
+    else:
+        return ((x - x.min()) / (x.max() - x.min()))
