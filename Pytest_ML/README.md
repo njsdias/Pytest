@@ -21,7 +21,7 @@ Advices:
 check the  [output test file](https://github.com/njsdias/Pytest/blob/master/Pytest_ML/0-Intro/3-output-bonus.txt)
 
 
-- To know more about the **assert** statement consult the [site](https://www.programiz.com/python-programming/assert-statement)
+- To know more about the **assert** statement consult the [site](https://www.programiz.com/python-programming/assert-statement). 
 
     - Key Points to Remember
     
@@ -32,3 +32,5 @@ check the  [output test file](https://github.com/njsdias/Pytest/blob/master/Pyte
         - Assert statement is used to check types, values of argument and the output of the function.
         
         - Assert statement is used as debugging tool as it halts the program at the point where an error occurs.
+
+- The **[hypothesis](https://hypothesis.readthedocs.io/en/latest/data.html)** package (pip install hyphotesis) is usefull to generate data and use it in our tests. And example can be seen in the [2-bonus folder](https://github.com/njsdias/Pytest/tree/master/Pytest_ML/2-bonus)
