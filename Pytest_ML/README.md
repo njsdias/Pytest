@@ -12,11 +12,11 @@ Advices:
 - Second : Build your functions inside a file datafuncs.py
 
 
-Notes:
+- Notes:
 
-- Check the lines that are not tested yet (pip install pytest-cov):
+    - Check the lines that are not tested yet (pip install pytest-cov):
 
-    pytest --cov-report term-missing --cov
+            pytest --cov-report term-missing --cov
 
 check the  [output test file](https://github.com/njsdias/Pytest/blob/master/Pytest_ML/0-Intro/3-output-bonus.txt)
 
