@@ -1,0 +1,42 @@
+C:\Users\ctw00071\Desktop\PytestPortland>ipython
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import string
+
+In [2]: import datatext as dtxt
+
+In [3]: t = "hello world! This is my pleasure, and the 2nd time I've been to PyCon!"
+
+In [4]: dtxt.strip_punctuation(t)  # testing removing punctuation
+Out[4]: 'hello world This is my pleasure and the 2nd time Ive been to PyCon'
+
+In [5]: dtxt.bag_of_words(t)  # testing tokenize the text
+Out[5]: 
+{'2nd',
+ 'Ive',
+ 'PyCon',
+ 'This',
+ 'and',
+ 'been',
+ 'hello',
+ 'is',
+ 'my',
+ 'pleasure',
+ 'the',
+ 'time',
+ 'to',
+ 'world'}
+
+In [6]: exit
+
+C:\Users\ctw00071\Desktop\PytestPortland>pytest test_datatext.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland, inifile:
+collected 2 items                                                                                                                                                                                                                      
+
+test_datatext.py ..                                                                                                                                                                                                              [100%]
+
+====================================================================================================== 2 passed in 0.03 seconds =======================================================================================================

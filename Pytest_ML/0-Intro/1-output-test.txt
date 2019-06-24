@@ -1,0 +1,45 @@
+C:\Users\ctw00071\Desktop\PytestPortland>ipython
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import numpy as np
+
+In [3]: arr = np.array([])      # empty array
+
+In [4]: import datafuncs as dfn
+
+In [5]: dfn.min_max_scaler(arr)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-5-2ad31762f3b9> in <module>()
+----> 1 dfn.min_max_scaler(arr)
+
+~\Desktop\PytestPortland\datafuncs.py in min_max_scaler(x)
+     18     # assert len(set(x)) > 1, "x should have more than 1 unique value"
+     19
+---> 20     return (x - x.min()) / (x.max()-x.min())
+
+c:\users\ctw00071\appdata\local\programs\python\python37\lib\site-packages\numpy\core\_methods.py in _amin(a, axis, out, keepdims, initial)
+     30 def _amin(a, axis=None, out=None, keepdims=False,
+     31           initial=_NoValue):
+---> 32     return umr_minimum(a, axis, None, out, keepdims, initial)
+     33
+     34 def _sum(a, axis=None, dtype=None, out=None, keepdims=False,
+
+ValueError: zero-size array to reduction operation minimum which has no identity
+
+In [6]: arr = [1,2,3]    # this is a list and is not a numpy array
+
+In [8]: dfn.min_max_scaler(arr)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-8-2ad31762f3b9> in <module>()
+----> 1 dfn.min_max_scaler(arr)
+
+~\Desktop\PytestPortland\datafuncs.py in min_max_scaler(x)
+     18     # assert len(set(x)) > 1, "x should have more than 1 unique value"
+     19
+---> 20     return (x - x.min()) / (x.max()-x.min())
+
+AttributeError: 'list' object has no attribute 'min'
