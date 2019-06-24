@@ -1,0 +1,11 @@
+C:\Users\ctw00071\Desktop\PytestPortland\2-bonus>pytest test_datafuncs.py::test_eq_roots
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\PytestPortland\\2-bonus\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\2-bonus, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 1 item                                                                                                                                                                                                                       
+
+test_datafuncs.py .                                                                                                                                                                                                              [100%]
+
+====================================================================================================== 1 passed in 0.22 seconds =======================================================================================================
