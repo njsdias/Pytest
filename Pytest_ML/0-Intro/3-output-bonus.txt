@@ -1,0 +1,63 @@
+=========================================== BEFORE TO IMPLEMENT THE TEST FOR FUNCTION CLIPS() ===============================================================================
+
+C:\Users\ctw00071\Desktop\PytestPortland\0-Intro>py.test --cov-report term-missing --cov
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\0-Intro, inifile:
+plugins: cov-2.7.1
+collected 4 items                                                                                                                                                                                                                      
+
+test_datafuncs.py ..                                                                                                                                                                                                             [ 50%]
+test_datatext.py ..                                                                                                                                                                                                              [100%]
+
+----------- coverage: platform win32, python 3.7.0-final-0 -----------
+Name                Stmts   Miss  Cover   Missing
+-------------------------------------------------
+datafuncs.py           12      3    75%   38-40
+datatext.py             8      0   100%
+test_datafuncs.py      14      0   100%
+test_datatext.py       11      0   100%
+-------------------------------------------------
+TOTAL                  45      3    93%
+
+
+====================================================================================================== 4 passed in 0.21 seconds =======================================================================================================
+
+
+
+=========================================== AFTER TO IMPLEMENT THE TEST FOR FUNCTION CLIPS() ===============================================================================
+
+
+C:\Users\ctw00071\Desktop\PytestPortland\0-Intro>pytest test_datafuncs.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\0-Intro, inifile:
+plugins: cov-2.7.1
+collected 3 items                                                                                                                                                                                                                      
+
+test_datafuncs.py ...                                                                                                                                                                                                            [100%]
+
+====================================================================================================== 3 passed in 0.12 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\PytestPortland\0-Intro>py.test --cov-report term-missing --cov
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\0-Intro, inifile:
+plugins: cov-2.7.1
+collected 5 items                                                                                                                                                                                                                      
+
+test_datafuncs.py ...                                                                                                                                                                                                            [ 60%]
+test_datatext.py ..                                                                                                                                                                                                              [100%]
+
+----------- coverage: platform win32, python 3.7.0-final-0 -----------
+Name                Stmts   Miss  Cover   Missing
+-------------------------------------------------
+datafuncs.py           12      0   100%
+datatext.py             8      0   100%
+test_datafuncs.py      20      0   100%
+test_datatext.py       11      0   100%
+-------------------------------------------------
+TOTAL                  51      0   100%
+
+
+====================================================================================================== 5 passed in 0.19 seconds =======================================================================================================
