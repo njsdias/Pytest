@@ -18,7 +18,6 @@ Notes:
 
     pytest --cov-report term-missing --cov
 
-check the file: 3-outputbonus.txt in 0-Intro
-    
+check the  [output test file](https://github.com/njsdias/Pytest/blob/master/Pytest_ML/0-Intro/3-output-bonus.txt)
 
 
