@@ -1,4 +1,4 @@
-# Pytest: Helps ypu write better programs
+# Pytest: Helps you write better programs
 
 Here is where I'm starting my journey in developing tests for my codes and the main objective is gain the foundations to develop tests to Machine Learning API's. So, in this repository we can find two folders: Pytest_Book and Pytest_ML. The first one follows the book: "Python Testing with pytest: Simple, Rapid, Effective, and Scalable" and the second have examples of my own research based in internet about this subject. 
 
