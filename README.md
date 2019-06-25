@@ -11,7 +11,9 @@ pytest is a software test framework, which means pytest is a command-line tool t
 The examples of the book are written using Python 3.6 and pytest 3.0. However, pytest 3.0 supports Python 2.6, 2.7, and Python 3.3-3.6.
 In my case I used the IntelliJ to follow the book.
 
-You should use pip to **install** pytest and pytest plugins
+You should use pip to **install** pytest and pytest plugins.
+
+If you want to have a brief introduction click [here](https://dev.tube/video/gUniRsB6hsY).
 
 
 ![book](https://user-images.githubusercontent.com/37953610/59893097-a1983480-93d3-11e9-8a72-9ac46708fcc3.JPG)
