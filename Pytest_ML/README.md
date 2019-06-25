@@ -4,6 +4,16 @@ This repo was builded following the seminar occured in 2017 in Portland: Best Te
 
 Please watch the [video](https://www.youtube.com/watch?v=yACtdj1_IxE) to understand the importance and the basic procedure in doing test in your ML code.
 
+- 0-Intro: Here we can see how we can test simple functions regarding with the type of the variable (np.array), the value that is returned by a function, check the values limits of a function ([0,1]) 
+
+- 1-Test_ML: Here you can see how write tests to check a schema of a dataframe. We need have two files: data.csv and schema.yml and compare the name of columns amoung the csv file and the yml file. 
+
+- 2-Test_ML: Here is an update of the previous exercise. Beside to check the schemas we can check in which columns we have missing values. If you know some columns have values in range [0,1] here we see how to check this statement.
+
+- 2-Bonus: Here you used the hypoteses package to generate data that will used in the test functions. 
+
+- 3-Bonus: Here we see how you can detect if a file was modified or not using the hash code of the file. More than that, we can generate a little DB to store the name, datetime,hashcode of the files and compare it with the actual hash code.
+
 
 Advices:
 
