@@ -1,0 +1,32 @@
+C:\Users\ctw00071\Desktop\PytestPortland\3-bonus>pytest -v test_datafuncs.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\PytestPortland\\3-bonus\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\3-bonus, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items                                                                                                                                                                                                                      
+
+test_datafuncs.py::test_divvy_corrupt FAILED                                                                                                                                                                                     [ 50%]
+test_datafuncs.py::test_divvy_filehash PASSED                                                                                                                                                                                    [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+_________________________________________________________________________________________________________ test_divvy_corrupt __________________________________________________________________________________________________________
+
+    def test_divvy_corrupt():
+        hash_true = dfn.hash_data('data/Divvy_Stations_2013.csv')
+        hash_corr = dfn.hash_data('data/Divvy_Stations_2013_corrupt.csv')
+    
+        for i in range(len(hash_true)):
+            true = hash_true.loc[i, 'hash']
+            corr = hash_corr.loc[i, 'hash']
+    
+>           assert true == corr, print(f"Row {i} has a problem.")
+E           AssertionError: None
+E           assert '8523ece8190a...42668d2f68d07' == '53a4a671069d4...76dfe77303ad0'
+E             - 8523ece8190a5049948d9219fe69a2dc48909da896a6c3bdf1542668d2f68d07
+E             + 53a4a671069d459cdd3c12f39415b446e96c813c166619a56ff76dfe77303ad0
+
+test_datafuncs.py:17: AssertionError
+-------------------------------------------------------------------------------------------------------- Captured stdout call ---------------------------------------------------------------------------------------------------------
+Row 2 has a problem.
