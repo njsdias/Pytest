@@ -1,0 +1,6 @@
+C:\Users\ctw00071\Desktop\PytestPortland\2-test_ML>pytest -v -m "not bostfirst" test_datafuncs.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ctw00071\Desktop\PytestPortland\2-test_ML, inifile:
+collected 1 item  
