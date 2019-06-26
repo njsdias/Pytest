@@ -57,8 +57,8 @@ anything. In _ch3/test_fixtures.py_ is a fixture that returns a tuple of mixed t
 
 ## Using Multiple Fixtures (..\code\ch3\a\tasks_proj\tests\func>)
 
-We want to test if when we after ONE tasks AFTER added THREE tasksthe total od tasks is 4.
-For this we the fixtures:
+We want to test if when we add ONE task AFTER added THREE tasks the total of tasks is 4.
+For this we have the follow fixtures:
 
 - db_with_3_tasks(tasks_db, tasks_just_a_few) that use two fixtures (tasks_db, tasks_just_a_few).
 
@@ -66,7 +66,7 @@ For this we the fixtures:
 
 - In the fixture tasks_db we start the DataBase, do some tests and stop the DataBase.
 
-In the test_add_increases_count(db_with_3_tasks) we use the fixture db_with_3_tasks to add the three tasks by the fixture tasks_just_a_few. After that we asssert if the tasks.count() == 4.
+In the test_add_increases_count(db_with_3_tasks) we use the fixture db_with_3_tasks to add the three tasks defined in the fixture tasks_just_a_few. After that we asssert if the tasks.count() == 4.
 
     def test_add_increases_count(db_with_3_tasks):               # db_with_3_tasks is ficture test defined in conftest.py
         """Test tasks.add() affect on tasks.count()."""
