@@ -15,5 +15,11 @@ You should use pip to **install** pytest and pytest plugins.
 
 If you want to have a brief introduction click [here](https://dev.tube/video/gUniRsB6hsY).
 
+Some more cool videos about pytest:
+
+1. [Python testing 101 with pytest](https://www.reddit.com/r/Python/comments/b18uqe/python_testing_101_with_pytest/)
+
+2. [Python Unit Testing With PyTest: Five Videos hands-on](https://www.youtube.com/watch?v=_QtM7QGuj1A&t=455s)
+
 
 ![book](https://user-images.githubusercontent.com/37953610/59893097-a1983480-93d3-11e9-8a72-9ac46708fcc3.JPG)
