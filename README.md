@@ -17,7 +17,7 @@ If you want to have a brief introduction click [here](https://dev.tube/video/gUn
 
 Some more cool videos about pytest:
 
-1. [Python testing 101 with pytest](https://www.reddit.com/r/Python/comments/b18uqe/python_testing_101_with_pytest/)
+1. [Python testing 101 with pytest](https://www.reddit.com/r/Python/comments/b18uqe/python_testing_101_with_pytest/). The entired code you can find [here](https://github.com/njsdias/Pytest/tree/master/Pytest_HandsOn/Calculator).
 
 2. [Python Unit Testing With PyTest: Five Videos hands-on](https://www.youtube.com/watch?v=_QtM7QGuj1A&t=455s)
 
