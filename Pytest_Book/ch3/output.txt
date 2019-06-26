@@ -1,0 +1,72 @@
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3\a\tasks_proj\tests\func>pytest --setup-show test_add.py -k valid_id
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Desktop\\Books\\TestFunctions-unittest\\code\\ch3\\a\\tasks_proj\\tests\\func\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3\a\tasks_proj\tests, inifile: pytest.ini
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 3 items / 2 deselected / 1 selected                                                                                                                                                                                          
+
+test_add.py
+SETUP    S tmp_path_factory
+        SETUP    F tmp_path (fixtures used: tmp_path_factory)
+        SETUP    F tmpdir (fixtures used: tmp_path)
+        SETUP    F tasks_db (fixtures used: tmpdir)
+        func/test_add.py::test_add_returns_valid_id (fixtures used: tasks_db, tmp_path, tmp_path_factory, tmpdir).
+        TEARDOWN F tasks_db
+        TEARDOWN F tmpdir
+        TEARDOWN F tmp_path
+TEARDOWN S tmp_path_factory
+
+=============================================================================================== 1 passed, 2 deselected in 0.06 seconds ================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3>pytest test_fixtures.py::test_a_tuple
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Desktop\\Books\\TestFunctions-unittest\\code\\ch3\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 1 item                                                                                                                                                                                                                       
+
+test_fixtures.py F                                                                                                                                                                                                               [100%]
+
+============================================================================================================== FAILURES ===============================================================================================================
+____________________________________________________________________________________________________________ test_a_tuple _____________________________________________________________________________________________________________
+
+a_tuple = (1, 'foo', None, {'bar': 23})
+
+    def test_a_tuple(a_tuple):
+        """Demo the a_tuple fixture."""
+>       assert a_tuple[3]['bar'] == 32
+E       assert 23 == 32
+
+test_fixtures.py:38: AssertionError
+====================================================================================================== 1 failed in 0.09 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3\b\tasks_proj>pytest --setup-show tests/func/test_add.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Desktop\\Books\\TestFunctions-unittest\\code\\ch3\\b\\tasks_proj\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Desktop\Books\TestFunctions-unittest\code\ch3\b\tasks_proj\tests, inifile: pytest.ini
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 3 items                                                                                                                                                                                                                      
+
+tests\func\test_add.py
+SETUP    S tmpdir_factory
+SETUP    S tasks_db_session (fixtures used: tmpdir_factory)
+        SETUP    F tasks_db (fixtures used: tasks_db_session)
+        func/test_add.py::test_add_returns_valid_id (fixtures used: tasks_db, tasks_db_session, tmpdir_factory).
+        TEARDOWN F tasks_db
+        SETUP    F tasks_db (fixtures used: tasks_db_session)
+        func/test_add.py::test_added_task_has_id_set (fixtures used: tasks_db, tasks_db_session, tmpdir_factory).
+        TEARDOWN F tasks_db
+SETUP    S tasks_just_a_few
+        SETUP    F tasks_db (fixtures used: tasks_db_session)
+        SETUP    F db_with_3_tasks (fixtures used: tasks_db, tasks_just_a_few)
+        func/test_add.py::test_add_increases_count (fixtures used: db_with_3_tasks, tasks_db, tasks_db_session, tasks_just_a_few, tmpdir_factory).
+        TEARDOWN F db_with_3_tasks
+        TEARDOWN F tasks_db
+TEARDOWN S tasks_db_session
+TEARDOWN S tmpdir_factory
+TEARDOWN S tasks_just_a_few
+
+====================================================================================================== 3 passed in 0.13 seconds =======================================================================================================
