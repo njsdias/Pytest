@@ -76,3 +76,46 @@ In the test_add_increases_count(db_with_3_tasks) we use the fixture db_with_3_ta
 
         #  THEN the count increases by 1
         assert tasks.count() == 4
+        
+ # Fixture Scope
+ Fixtures include an optional parameter called scope, which controls how often
+a fixture gets set up and torn down. The scopes are:
+
+- scope='function': Run once per test function. The setup portion is run before each test using
+the fixture. The teardown portion is run after each test using the fixture.
+This is the default scope used when no scope parameter is specified.
+
+- scope='class' : Run once per test class, regardless of how many test methods are in the class.
+
+- scope='module' ; Run once per module, regardless of how many test functions or methods
+or other fixtures in the module use it.
+
+- scope='session' : Run once per session. All test methods and functions using a fixture of
+session scope share one setup and teardown call.
+
+So far, **if you wanted a test to use a fixture**, you put it in the parameter list.
+You can also mark a test or a class with _@pytest.mark.usefixtures('fixture1', 'fixture2')_.
+_usefixtures_ takes a string that is composed of a comma-separated list of fixtures
+to use.
+
+Using usefixtures is almost the same as specifying the fixture name in the test
+method parameter list. **The one difference is** that the test can use the return
+value of a fixture only if it’s specified in the parameter list. A test using a fixture
+due to usefixtures cannot use the fixture’s return value.
+
+The decision (in the code) of which database to use is isolated to the
+start_tasks_db() call in the tasks_db_session fixture (ch3/b/tasks_proj/tests/conftest.py). To test MongoDB, we need to run all the tests with db_type set to mongo. A small
+change does the trick (ch3/c/tasks_proj/tests/conftest.py)
+
+    #@pytest.fixture(scope='session', params=['tiny',])
+    @pytest.fixture(scope='session', params=['tiny', 'mongo'])
+    def tasks_db_session(tmpdir_factory, request):
+        """Connect to db before tests, disconnect after."""
+        temp_dir = tmpdir_factory.mktemp('temp')
+        tasks.start_tasks_db(str(temp_dir), request.param)
+        yield # this is where the testing happens
+        tasks.stop_tasks_db()
+        
+Here I added _params=['tiny','mongo']_ to the fixture decorator. I added request to the
+parameter list of temp_db, and I set db_type to request.param instead of just picking
+'tiny' or 'mongo'.
