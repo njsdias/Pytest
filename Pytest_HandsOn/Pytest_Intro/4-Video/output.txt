@@ -1,0 +1,92 @@
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -v -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py::test_scott_data -------------setup-------------
+PASSED
+test_math_func.py::test_mark_data PASSED-------------teardown-------------
+
+
+====================================================================================================== 2 passed in 0.02 seconds =======================================================================================================
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -v -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py::test_scott_data -------------setup-------------
+PASSED
+test_math_func.py::test_mark_data PASSED-------------teardown-------------
+
+
+====================================================================================================== 2 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -v -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py::test_scott_data -------------setup-------------
+PASSED
+test_math_func.py::test_mark_data -------------setup-------------
+PASSED
+
+====================================================================================================== 2 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -v -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py::test_scott_data -------------setup-------------
+PASSED
+test_math_func.py::test_mark_data PASSED
+
+====================================================================================================== 2 passed in 0.05 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -v -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py::test_scott_data -------------setup-------------
+PASSED
+test_math_func.py::test_mark_data PASSED-------------teardown-------------
+
+
+====================================================================================================== 2 passed in 0.06 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video>pytest -s
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\4-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\4-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 2 items
+
+test_math_func.py -------------setup-------------
+..-------------teardown-------------
+
+
+====================================================================================================== 2 passed in 0.03 seconds =======================================================================================================
+
