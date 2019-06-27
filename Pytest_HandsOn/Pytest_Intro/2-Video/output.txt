@@ -1,0 +1,98 @@
+Windows [Version 10.0.17134.407]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn>cd C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v -k "add"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items / 2 deselected / 2 selected
+
+test_math_func.py::test_add PASSED                                                                                                                                                                                               [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [100%]
+
+=============================================================================================== 2 passed, 2 deselected in 0.02 seconds ================================================================================================
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v -k "add or prod"
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items
+
+test_math_func.py::test_add PASSED                                                                                                                                                                                               [ 25%]
+test_math_func.py::test_prod PASSED                                                                                                                                                                                              [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [ 75%]
+test_math_func.py::test_prod_strings PASSED                                                                                                                                                                                      [100%]
+
+====================================================================================================== 4 passed in 0.17 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items
+
+test_math_func.py::test_add PASSED                                                                                                                                                                                               [ 25%]
+test_math_func.py::test_prod PASSED                                                                                                                                                                                              [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [ 75%]
+test_math_func.py::test_prod_strings PASSED                                                                                                                                                                                      [100%]
+
+====================================================================================================== 4 passed in 0.06 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items
+
+test_math_func.py::test_add PASSED                                                                                                                                                                                               [ 25%]
+test_math_func.py::test_prod PASSED                                                                                                                                                                                              [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [ 75%]
+test_math_func.py::test_prod_strings PASSED                                                                                                                                                                                      [100%]
+
+====================================================================================================== 4 passed in 0.06 seconds =======================================================================================================
+
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items
+
+test_math_func.py::test_add PASSED                                                                                                                                                                                               [ 25%]
+test_math_func.py::test_prod PASSED                                                                                                                                                                                              [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [ 75%]
+test_math_func.py::test_prod_strings PASSED                                                                                                                                                                                      [100%]
+
+====================================================================================================== 4 passed in 0.06 seconds =======================================================================================================
+
+C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video>pytest -v
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.7.0, pytest-4.2.1, py-1.7.0, pluggy-0.8.1 -- c:\users\ctw00071\appdata\local\programs\python\python37\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('C:\\Users\\ctw00071\\Desktop\\Pytest_HandsOn\\Pytest_Intro\\2-Video\\.hypothesis\\examples')
+rootdir: C:\Users\ctw00071\Desktop\Pytest_HandsOn\Pytest_Intro\2-Video, inifile:
+plugins: cov-2.7.1, hypothesis-4.24.5
+collected 4 items
+
+test_math_func.py::test_add SKIPPED                                                                                                                                                                                              [ 25%]
+test_math_func.py::test_prod PASSED                                                                                                                                                                                              [ 50%]
+test_math_func.py::test_add_strings PASSED                                                                                                                                                                                       [ 75%]
+test_math_func.py::test_prod_strings PASSED                                                                                                                                                                                      [100%]
+
+================================================================================================= 3 passed, 1 skipped in 0.05 seconds =================================================================================================
